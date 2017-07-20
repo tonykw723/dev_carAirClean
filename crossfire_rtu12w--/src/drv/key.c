@@ -124,7 +124,8 @@ void KEY_doAction(void)
 			glbRtuPara.runningInfo.flag_taskStart=DONE;
 			glbRtuPara.runningInfo.flag_taskStart=glbRtuPara.runningInfo.flag_taskStart_backup;
 			glbRtuPara.flashConfig.value.runMode=AUTO_MODE;//进入传感器任务
-			apComm_doReport(accDoAll,1);
+			//apComm_doReport(accDoAll,1);
+			glbRtuPara.runningInfo.heartBeatPeriod=3;
 		}
 		else
 		{
@@ -135,6 +136,7 @@ void KEY_doAction(void)
 			glbRtuPara.runningInfo.flag_taskStart_backup=glbRtuPara.runningInfo.flag_taskStart;
 			glbRtuPara.flashConfig.value.runMode=HAND_MODE;//退出传感器任务，直到定时任务生效
 			glbRtuPara.runningInfo.flag_fanAdjLevel=0;
+			glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;
 		}
 	}
 	else if(key.bitMode)
@@ -148,6 +150,7 @@ void KEY_doAction(void)
 			glbRtuPara.flashConfig.value.runMode=AUTO_MODE;
 			glbRtuPara.runningInfo.flag_DLED_en=NO;
 			glbRtuPara.runningInfo.flag_FLED_en=YES;
+			glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;
 		//}
 		//else
 		//	glbRtuPara.flashConfig.value.runMode=HAND_MODE;
@@ -166,7 +169,8 @@ void KEY_doAction(void)
 		if(glbRtuPara.runningInfo.flag_fanAdjLevel==0)
 		{
 			FAN_SPEED1();
-			apComm_doReport(accOpenFan,1);
+			//apComm_doReport(accOpenFan,1);
+			glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;
 			glbRtuPara.runningInfo.flag_fanAdjLevel=1;
 			glbRtuPara.runningInfo.flag_fanOpened=YES;
 			
@@ -174,21 +178,24 @@ void KEY_doAction(void)
 		else if(glbRtuPara.runningInfo.flag_fanAdjLevel==1)
 		{
 			FAN_SPEED2();
-			apComm_doReport(accOpenFan,1);
+			//apComm_doReport(accOpenFan,1);
+			glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;
 			glbRtuPara.runningInfo.flag_fanAdjLevel=2;
 			glbRtuPara.runningInfo.flag_fanOpened=YES;
 		}
 		else if(glbRtuPara.runningInfo.flag_fanAdjLevel==2)
 		{
 			FAN_SPEED3();
-			apComm_doReport(accOpenFan,1);
+			//apComm_doReport(accOpenFan,1);
+			glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;
 			glbRtuPara.runningInfo.flag_fanAdjLevel=3;
 			glbRtuPara.runningInfo.flag_fanOpened=YES;
 		}
 		else if(glbRtuPara.runningInfo.flag_fanAdjLevel==3)
 		{
 			FAN_SPEED4();
-			apComm_doReport(accOpenFan,1);
+			//apComm_doReport(accOpenFan,1);
+			glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;
 			glbRtuPara.runningInfo.flag_fanAdjLevel=0;
 			glbRtuPara.runningInfo.flag_fanOpened=YES;
 		}
@@ -203,13 +210,15 @@ void KEY_doAction(void)
 		if(glbRtuPara.runningInfo.flag_DLZ_Opened==NO)
 		{
 			drvDLZOpen2();
-			apComm_doReport(accOpenDLZ,1);
+			//apComm_doReport(accOpenDLZ,1);
+			glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;
 		}
 		else
 		{
 		
 			drvDLZClose();
-			apComm_doReport(accCloseDLZ,1);
+			//apComm_doReport(accCloseDLZ,1);
+			glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;
 		}
 	}
 }

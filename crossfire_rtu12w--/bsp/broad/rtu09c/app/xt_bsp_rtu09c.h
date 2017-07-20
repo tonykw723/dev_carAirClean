@@ -99,7 +99,11 @@ typedef struct
 	unsigned short HM_val;//Êª¶È
 	float PM2_5_val;
 	char VOC_val;
+	char VOC_val_old;
 	
+	char flagPM2_5_level;
+	char flagPM2_5_level_old;
+
 	//------------------------------------------
 }sensor_type;
 

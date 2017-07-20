@@ -54,7 +54,7 @@ xt_s32 v100;
 ap_measure_priv_data_t gMeasureData = {0};
 #define idx_PM2_5 0
 //#define idx_VOC 0
-
+extern rtu_para_t glbRtuPara;
 //========================================================
 float pm25_1equation[11][2]=
 {
@@ -174,6 +174,12 @@ void calculatePM2_5(void)
 void calculateVOC(void)
 {
 	sensor.VOC_val=VOC_getVal();
+	if(sensor.VOC_val!=sensor.VOC_val_old)
+	{
+		sensor.VOC_val_old=sensor.VOC_val;
+		PrintfXTOS("VOC_val changed\n");
+		glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;//马上上报心跳包，更新状态
+	}
 	PrintfXTOS("sensor.VOC_val=%x\n",sensor.VOC_val);
 }
 
@@ -185,23 +191,34 @@ void get_sensor_value(void)
 	calculateVOC();
 	if((sensor.PM2_5_val<=25))
 	{
+		sensor.flagPM2_5_level=1;
+		
 		FLED_green();
 		DLED_green();
 	}
 	else if((sensor.PM2_5_val<=50))
 	{
+		sensor.flagPM2_5_level=2;
 		FLED_blue();
 		DLED_blue();
 	}
 	else if((sensor.PM2_5_val<=75))
 	{
+		sensor.flagPM2_5_level=3;
 		FLED_yellow();
 		DLED_yellow();
 	}
-	else
+	else 
 	{
+		sensor.flagPM2_5_level=4;
 		FLED_red();
 		DLED_red();
+	}
+	if(sensor.flagPM2_5_level!=sensor.flagPM2_5_level_old)
+	{
+		PrintfXTOS("PM2.5 changed\n");
+		sensor.flagPM2_5_level_old=sensor.flagPM2_5_level;
+		glbRtuPara.runningInfo.flag_heartBeatCmdStart=YES;//马上上报心跳包，更新状态
 	}
 
 }
