@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="bsp-broad">
+      <UniqueIdentifier>{1252c00d-2e9e-4e8e-8c83-80b3e908f8b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-freertos">
+      <UniqueIdentifier>{dec22a4f-1847-4ed3-b1d7-b2fdaee3485d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-freertos\inc">
+      <UniqueIdentifier>{e4ac0d93-ccfb-4ea4-bbe8-e127ad8af629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-freertos\src">
+      <UniqueIdentifier>{23a302d8-08a6-4cde-a414-b632944de55b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-freertos\src\portable">
+      <UniqueIdentifier>{7825e537-f7e8-4381-a1e6-4172fc50b591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{9c234266-bb35-4a54-874b-4d34e63238ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\ap">
+      <UniqueIdentifier>{d41686f0-8409-4523-86d4-dba851985047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\drv">
+      <UniqueIdentifier>{2178ebf1-7028-4db5-ab4b-51bd687cc8f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\mdl">
+      <UniqueIdentifier>{0c168234-7455-4e4d-8ccf-190b2ec0aefc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\os">
+      <UniqueIdentifier>{8fba5d61-a899-41ce-872b-8b5373239535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{3496936d-a915-4efe-95a2-cb49870ed121}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ap">
+      <UniqueIdentifier>{a2b5b85e-49e9-4afa-a094-d57f950ae434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\mdl">
+      <UniqueIdentifier>{d427d288-3e82-42c4-ab5c-32890bc47f98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\mdl\dev">
+      <UniqueIdentifier>{2c30bc43-eae0-477c-9997-8f2fe7eba0b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\mdl\pro">
+      <UniqueIdentifier>{2f373b31-cf9a-4fce-a20c-0f224a9cf5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\os">
+      <UniqueIdentifier>{0c434e78-d86a-4561-b65e-4918c301a5dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="prj">
+      <UniqueIdentifier>{1d255ac2-96b5-4d1c-99ca-d0b7eeb899bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{925da196-27c7-4717-95d5-b14d4b57981d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{16d1fdfd-29d1-4684-bf23-c6ed524ed41c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\mdl\conn">
+      <UniqueIdentifier>{eacdbd2a-8730-4096-97ea-6c6f973c6748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\aes">
+      <UniqueIdentifier>{acc0b9ed-0757-4dc4-b6cc-e5bf915e70de}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\crossfire_MFC.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\crossfire_MFC.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="crossfire_MFC.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="crossfire_MFCDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\bsp\broad\rtu09c\app\FreeRTOSConfig.h">
+      <Filter>bsp-broad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\bsp\broad\rtu09c\app\xt_bsp_rtu09c.h">
+      <Filter>bsp-broad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\croutine.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\FreeRTOS.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\list.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\mpu_wrappers.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\portable.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\projdefs.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\queue.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\semphr.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\StackMacros.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\task.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\timers.h">
+      <Filter>lib-freertos\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\ap\ap.h">
+      <Filter>inc\ap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\ap\ap_comm.h">
+      <Filter>inc\ap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\ap\ap_measure.h">
+      <Filter>inc\ap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\ap\misc_timer.h">
+      <Filter>inc\ap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\drv\drv_uart.h">
+      <Filter>inc\drv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\conn_msg.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\conn_uart.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\dev_rise.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\pro_ap.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\pro_ap_iot.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\pro_dev_iot.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\xt_conn.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\xt_dev.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\xt_pro_ap.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\os\xtos_mem.h">
+      <Filter>inc\os</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\os\xtos_msg.h">
+      <Filter>inc\os</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\os\xtos_print.h">
+      <Filter>inc\os</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\os\xtos_sem.h">
+      <Filter>inc\os</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\os\xtos_task.h">
+      <Filter>inc\os</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\os\xtos_timer.h">
+      <Filter>inc\os</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\prj\crossfire\app\config.h">
+      <Filter>prj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\prj\crossfire\app\xtsys_type.h">
+      <Filter>prj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\drv\drv_light.h">
+      <Filter>inc\drv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\mdl\pro_ap_hz.h">
+      <Filter>inc\mdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\inc\ap\ap_rtu.h">
+      <Filter>inc\ap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\prj\crossfire\app\xtsys_cfg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="crossfire_MFC.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="crossfire_MFCDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\bsp\broad\rtu09c\app\xt_bsp_rtu09c.c">
+      <Filter>bsp-broad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\portable\MemMang\heap_2.c">
+      <Filter>lib-freertos\src\portable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\croutine.c">
+      <Filter>lib-freertos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\list.c">
+      <Filter>lib-freertos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\queue.c">
+      <Filter>lib-freertos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\tasks.c">
+      <Filter>lib-freertos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\timers.c">
+      <Filter>lib-freertos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ap\ap_comm.c">
+      <Filter>src\ap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ap\ap_measure.c">
+      <Filter>src\ap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ap\ap_rtu.c">
+      <Filter>src\ap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ap\misc_timer.c">
+      <Filter>src\ap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\mdl\dev\risecomm\dev_rise.c">
+      <Filter>src\mdl\dev</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\mdl\pro\iotcomm\pro_ap_iot.c">
+      <Filter>src\mdl\pro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\mdl\pro\iotcomm\pro_dev_iot.c">
+      <Filter>src\mdl\pro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\os\xtos_print.c">
+      <Filter>src\os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\prj\crossfire\app\config.c">
+      <Filter>prj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\prj\crossfire\app\main.c">
+      <Filter>prj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\test\crossfire\app\test_main.c">
+      <Filter>prj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\thirdparty\Unity-master\src\unity.c">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\portable\MSVC-MingW\port.c">
+      <Filter>lib-freertos\src\portable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\mdl\pro\huazhi\pro_ap_hz.c">
+      <Filter>src\mdl\pro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\ringqueue.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\mdl\conn\conn_msg.c">
+      <Filter>src\mdl\conn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lib\AES\lib_st_aes.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="crossfire_MFC.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

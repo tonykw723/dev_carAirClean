@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0E647F04-B0BB-4F45-AC79-67837F03C3D0}</ProjectGuid>
+    <RootNamespace>crossfire_MFC</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <IncludePath>..\..\..\bsp\broad\rtu09c\app;..\..\..\bsp\broad\rtu09c\app\stm32l1xx;..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include;..\..\..\thirdparty\Unity-master\src;..\..\..\inc;..\..\..\inc\ap;..\..\..\inc\drv;..\..\..\inc\mdl;..\..\..\inc\os;..\..\..\inc\util;..\..\..\prj\crossfire\app;..\..\..\util;..\..\..\lib\AES;..\..\..\src\drv;..\..\..\src\mdl\data_manager;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_WIN32_WINNT=0x0500;WINVER=0x400;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include;..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\portable\MSVC-MingW;..\..\..\thirdparty\Unity-master\src;..\..\..\inc;..\..\..\inc\os;..\..\..\inc\drv;..\..\..\inc\mdl;..\..\..\inc\ap;..\..\..\inc\util;..\..\..\bsp\broad\rtu09c\app;..\..\..\prj\crossfire\app;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <StructMemberAlignment>1Byte</StructMemberAlignment>
+      <PrecompiledHeaderOutputFile>.\Debug/WIN32.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>.\Debug/crossfire_MFC.exe</OutputFile>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>.\Debug/WIN32.pdb</ProgramDatabaseFile>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Bscmake>
+      <OutputFile>.\Debug/WIN32.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\crossfire_MFC.ico" />
+    <None Include="res\crossfire_MFC.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\bsp\broad\rtu09c\app\FreeRTOSConfig.h" />
+    <ClInclude Include="..\..\..\bsp\broad\rtu09c\app\xt_bsp_rtu09c.h" />
+    <ClInclude Include="..\..\..\inc\ap\ap.h" />
+    <ClInclude Include="..\..\..\inc\ap\ap_comm.h" />
+    <ClInclude Include="..\..\..\inc\ap\ap_measure.h" />
+    <ClInclude Include="..\..\..\inc\ap\ap_rtu.h" />
+    <ClInclude Include="..\..\..\inc\ap\misc_timer.h" />
+    <ClInclude Include="..\..\..\inc\drv\drv_light.h" />
+    <ClInclude Include="..\..\..\inc\drv\drv_uart.h" />
+    <ClInclude Include="..\..\..\inc\mdl\conn_msg.h" />
+    <ClInclude Include="..\..\..\inc\mdl\conn_uart.h" />
+    <ClInclude Include="..\..\..\inc\mdl\dev_rise.h" />
+    <ClInclude Include="..\..\..\inc\mdl\pro_ap.h" />
+    <ClInclude Include="..\..\..\inc\mdl\pro_ap_hz.h" />
+    <ClInclude Include="..\..\..\inc\mdl\pro_ap_iot.h" />
+    <ClInclude Include="..\..\..\inc\mdl\pro_dev_iot.h" />
+    <ClInclude Include="..\..\..\inc\mdl\xt_conn.h" />
+    <ClInclude Include="..\..\..\inc\mdl\xt_dev.h" />
+    <ClInclude Include="..\..\..\inc\mdl\xt_pro_ap.h" />
+    <ClInclude Include="..\..\..\inc\os\xtos_mem.h" />
+    <ClInclude Include="..\..\..\inc\os\xtos_msg.h" />
+    <ClInclude Include="..\..\..\inc\os\xtos_print.h" />
+    <ClInclude Include="..\..\..\inc\os\xtos_sem.h" />
+    <ClInclude Include="..\..\..\inc\os\xtos_task.h" />
+    <ClInclude Include="..\..\..\inc\os\xtos_timer.h" />
+    <ClInclude Include="..\..\..\prj\crossfire\app\config.h" />
+    <ClInclude Include="..\..\..\prj\crossfire\app\xtsys_cfg.h" />
+    <ClInclude Include="..\..\..\prj\crossfire\app\xtsys_type.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\croutine.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\FreeRTOS.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\list.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\mpu_wrappers.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\portable.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\projdefs.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\queue.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\semphr.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\StackMacros.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\task.h" />
+    <ClInclude Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\include\timers.h" />
+    <ClInclude Include="crossfire_MFC.h" />
+    <ClInclude Include="crossfire_MFCDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\bsp\broad\rtu09c\app\xt_bsp_rtu09c.c" />
+    <ClCompile Include="..\..\..\lib\AES\lib_st_aes.c" />
+    <ClCompile Include="..\..\..\prj\crossfire\app\config.c" />
+    <ClCompile Include="..\..\..\prj\crossfire\app\main.c" />
+    <ClCompile Include="..\..\..\src\ap\ap_comm.c" />
+    <ClCompile Include="..\..\..\src\ap\ap_measure.c" />
+    <ClCompile Include="..\..\..\src\ap\ap_rtu.c" />
+    <ClCompile Include="..\..\..\src\ap\misc_timer.c" />
+    <ClCompile Include="..\..\..\src\mdl\conn\conn_msg.c" />
+    <ClCompile Include="..\..\..\src\mdl\dev\risecomm\dev_rise.c" />
+    <ClCompile Include="..\..\..\src\mdl\pro\huazhi\pro_ap_hz.c" />
+    <ClCompile Include="..\..\..\src\mdl\pro\iotcomm\pro_ap_iot.c" />
+    <ClCompile Include="..\..\..\src\mdl\pro\iotcomm\pro_dev_iot.c" />
+    <ClCompile Include="..\..\..\src\os\xtos_print.c" />
+    <ClCompile Include="..\..\..\src\util\ringqueue.c" />
+    <ClCompile Include="..\..\..\test\crossfire\app\test_main.c" />
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\croutine.c" />
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\list.c" />
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\portable\MemMang\heap_2.c" />
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\portable\MSVC-MingW\port.c" />
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\queue.c" />
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\tasks.c" />
+    <ClCompile Include="..\..\..\thirdparty\FreeRTOSV7.5.2\FreeRTOS\Source\timers.c" />
+    <ClCompile Include="..\..\..\thirdparty\Unity-master\src\unity.c" />
+    <ClCompile Include="crossfire_MFC.cpp" />
+    <ClCompile Include="crossfire_MFCDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="crossfire_MFC.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="crossfire_MFC.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

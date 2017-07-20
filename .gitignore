@@ -42,6 +42,46 @@
 *.idb
 *.pdb
 
+# SVN file
+*.svn-base
+
+# project file
+*.crf
+*.ico
+*.bak
+*.uvopt
+*.lst
+*.axf
+*.htm
+*.lnp
+*.plg
+*.dep
+*.rc2
+*.svd
+*.xsd
+*.html
+*.iex
+*.tra
+*.sct
+*.__i
+*.tony
+*.tra
+*.IAB
+*.IAD
+*.IMB
+*.IMD
+*.PFI
+*.PO
+*.PRI
+*.PS
+*.WK3
+*.SearchResults
+*.rb
+*.yml
+*.odt
+*.uvoptx
+*.patch
+
 # Kernel Module Compile Results
 *.mod*
 *.cmd
