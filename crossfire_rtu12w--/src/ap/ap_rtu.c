@@ -177,7 +177,7 @@ xt_void apReadFlashCfgPara(void)
 	glbRtuPara.flashConfig.value.rtuOrPlc_uid_own[2]=0;
 	glbRtuPara.flashConfig.value.rtuOrPlc_uid_own[3]=0;
 	glbRtuPara.flashConfig.value.rtuOrPlc_uid_own[4]=0;
-	glbRtuPara.flashConfig.value.rtuOrPlc_uid_own[5]=1;
+	glbRtuPara.flashConfig.value.rtuOrPlc_uid_own[5]=5;
 	if(glbRtuPara.flashConfig.value.have_writed==0x1234)
 	{
 		PrintfXTOS("  -project_name:");
@@ -446,24 +446,18 @@ static xt_void apRTUOnDoAllCmd(xt_void* p)
 		proRetSt.doFlag=pProCmd->doFlag;
 		if(pProCmd->doFlag==0)//close all
 		{
-			drvFanDim(0);
-			drvDLZClose();
-			
-			//DLED_WriteLedEn(0);
-			glbRtuPara.runningInfo.flag_DLED_en=NO;
-			glbRtuPara.runningInfo.flag_FLED_en=NO;
+			drvTurnOff();
+			glbRtuPara.runningInfo.flag_taskStart=NO;
+			glbRtuPara.runningInfo.flag_taskStart_backup=glbRtuPara.runningInfo.flag_taskStart;
 			glbRtuPara.flashConfig.value.runMode=HAND_MODE;
-			glbRtuPara.runningInfo.flag_powerEn=NO;
+			glbRtuPara.runningInfo.flag_fanAdjLevel=0;
 		}
 		else
 		{
-			drvFanDim(95);
-			drvDLZOpen();
-			//DLED_WriteLedEn(1);
-			glbRtuPara.runningInfo.flag_DLED_en=NO;
-			glbRtuPara.runningInfo.flag_FLED_en=YES;
+			drvTurnOn();
+			glbRtuPara.runningInfo.flag_taskStart=DONE;
+			glbRtuPara.runningInfo.flag_taskStart=glbRtuPara.runningInfo.flag_taskStart_backup;
 			glbRtuPara.flashConfig.value.runMode=AUTO_MODE;
-			glbRtuPara.runningInfo.flag_powerEn=YES;
 		}
 	}
 	apRTUReqRespComm(p, (xt_u8*)&proRetSt, sizeof(proRetSt));

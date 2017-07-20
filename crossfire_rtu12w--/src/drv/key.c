@@ -120,27 +120,19 @@ void KEY_doAction(void)
 		PrintfXTOS("key power press to do...\n");
 		if(glbRtuPara.runningInfo.flag_powerEn==NO)
 		{
-
+			drvTurnOn();
 			glbRtuPara.runningInfo.flag_taskStart=DONE;
 			glbRtuPara.runningInfo.flag_taskStart=glbRtuPara.runningInfo.flag_taskStart_backup;
-			glbRtuPara.runningInfo.flag_DLED_en=NO;//关闭氛围灯
-			glbRtuPara.runningInfo.flag_FLED_en=YES;//开启指示灯
-			glbRtuPara.runningInfo.flag_powerEn=YES;//当前状态为开启
-			drvDLZOpen();
 			glbRtuPara.flashConfig.value.runMode=AUTO_MODE;//进入传感器任务
 			apComm_doReport(accDoAll,1);
 		}
 		else
 		{
 			//goto idle status
-			drvFanDim( 0);
-			glbRtuPara.runningInfo.flag_fanOpened=NO;
-			drvDLZClose();			
+			drvTurnOff();
+			
 			glbRtuPara.runningInfo.flag_taskStart=NO;
 			glbRtuPara.runningInfo.flag_taskStart_backup=glbRtuPara.runningInfo.flag_taskStart;
-			glbRtuPara.runningInfo.flag_DLED_en=NO;
-			glbRtuPara.runningInfo.flag_FLED_en=NO;
-			glbRtuPara.runningInfo.flag_powerEn=NO;
 			glbRtuPara.flashConfig.value.runMode=HAND_MODE;//退出传感器任务，直到定时任务生效
 			glbRtuPara.runningInfo.flag_fanAdjLevel=0;
 		}
@@ -173,7 +165,7 @@ void KEY_doAction(void)
 		glbRtuPara.flashConfig.value.runMode=HAND_MODE;
 		if(glbRtuPara.runningInfo.flag_fanAdjLevel==0)
 		{
-			drvFanDim( 20);
+			FAN_SPEED1();
 			apComm_doReport(accOpenFan,1);
 			glbRtuPara.runningInfo.flag_fanAdjLevel=1;
 			glbRtuPara.runningInfo.flag_fanOpened=YES;
@@ -181,21 +173,21 @@ void KEY_doAction(void)
 		}
 		else if(glbRtuPara.runningInfo.flag_fanAdjLevel==1)
 		{
-			drvFanDim(40);
+			FAN_SPEED2();
 			apComm_doReport(accOpenFan,1);
 			glbRtuPara.runningInfo.flag_fanAdjLevel=2;
 			glbRtuPara.runningInfo.flag_fanOpened=YES;
 		}
 		else if(glbRtuPara.runningInfo.flag_fanAdjLevel==2)
 		{
-			drvFanDim(60);
+			FAN_SPEED3();
 			apComm_doReport(accOpenFan,1);
 			glbRtuPara.runningInfo.flag_fanAdjLevel=3;
 			glbRtuPara.runningInfo.flag_fanOpened=YES;
 		}
 		else if(glbRtuPara.runningInfo.flag_fanAdjLevel==3)
 		{
-			drvFanDim(80);
+			FAN_SPEED4();
 			apComm_doReport(accOpenFan,1);
 			glbRtuPara.runningInfo.flag_fanAdjLevel=0;
 			glbRtuPara.runningInfo.flag_fanOpened=YES;
@@ -210,7 +202,7 @@ void KEY_doAction(void)
 		glbRtuPara.flashConfig.value.runMode=HAND_MODE;
 		if(glbRtuPara.runningInfo.flag_DLZ_Opened==NO)
 		{
-			drvDLZOpen();
+			drvDLZOpen2();
 			apComm_doReport(accOpenDLZ,1);
 		}
 		else

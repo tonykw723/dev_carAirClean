@@ -25,53 +25,43 @@ void do_sensorTask(void)
 		f_done=0;
 		return;
 	} 
-	/*if((sensor.PM2_5_val==0))
+	if((sensor.PM2_5_val<=25))
 	{
 		if(f_done==1)
 			return;
-		PrintfXTOS("do_sensorTask fan pwm 10\n");
-		drvFanDim(20);
+		PrintfXTOS("do_sensorTask fan speed1\n");
+		FAN_SPEED1();
 		glbRtuPara.runningInfo.flag_fanAdjLevel=1;
-		glbRtuPara.runningInfo.flag_fanOpened=NO;
+		glbRtuPara.runningInfo.flag_fanOpened=YES;
 		f_done=1;
 	}
-	else*/ if((sensor.PM2_5_val<=25))
+	else if((sensor.PM2_5_val<=40))
 	{
 		if(f_done==2)
 			return;
-		PrintfXTOS("do_sensorTask fan pwm 20\n");
-		drvFanDim(20);
+		PrintfXTOS("do_sensorTask fan speed2\n");
+		FAN_SPEED2();
 		glbRtuPara.runningInfo.flag_fanAdjLevel=2;
 		glbRtuPara.runningInfo.flag_fanOpened=YES;
 		f_done=2;
-	}
-	else if((sensor.PM2_5_val<=50))
+	}	
+	else if((sensor.PM2_5_val<=55))
 	{
 		if(f_done==3)
 			return;
-		PrintfXTOS("do_sensorTask fan pwm 60\n");
-		drvFanDim(40);
+		PrintfXTOS("do_sensorTask fan speed3\n");
+		FAN_SPEED3();
 		glbRtuPara.runningInfo.flag_fanAdjLevel=3;
 		glbRtuPara.runningInfo.flag_fanOpened=YES;
 		f_done=3;
-	}	
-	else if((sensor.PM2_5_val<=75))
-	{
-		if(f_done==4)
-			return;
-		PrintfXTOS("do_sensorTask fan pwm 60\n");
-		drvFanDim(60);
-		glbRtuPara.runningInfo.flag_fanAdjLevel=4;
-		glbRtuPara.runningInfo.flag_fanOpened=YES;
-		f_done=4;
 	}
-	else if(f_done!=5)
+	else if(f_done!=4)
 	{
-		PrintfXTOS("do_sensorTask fan pwm 80\n");
-		drvFanDim(80);
+		PrintfXTOS("do_sensorTask fan speed4\n");
+		FAN_SPEED4();
 		glbRtuPara.runningInfo.flag_fanAdjLevel=0;
 		glbRtuPara.runningInfo.flag_fanOpened=YES;
-		f_done=5;
+		f_done=4;
 	}
 }
 

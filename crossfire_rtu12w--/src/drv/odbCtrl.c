@@ -7,8 +7,11 @@
 #include "xtos_timer.h"
 
 #include "xt_bsp_rtu09c.h"
+#include "discover_board.h"
+#include "drv_light.h"
 #include "odbCtrl.h"
 #include "global_para.h"
+#include "pro_ap.h"
 
 extern rtu_para_t glbRtuPara;
 
@@ -76,8 +79,12 @@ void odb_doTask(xt_u8* pData,xt_s32* pDataLen)
 	static xt_u8 flag0=0,flag1=0;
 	if(odb_readDatas(pData,pDataLen)>0)
 	{
+		if(odb_chkDatas(pData,pDataLen)==-1)
+			return;
 		glbRtuPara.runningInfo.flag_carPowerOn=odb_chkDatas(pData,pDataLen);
 	}
+	else
+		return;
 	if(glbRtuPara.runningInfo.flag_carPowerOn==YES)
 	{
 		if(flag0==0)
@@ -86,7 +93,11 @@ void odb_doTask(xt_u8* pData,xt_s32* pDataLen)
 			PrintfXTOS("car power on and do sensor task\n");
 		}
 		flag1=0;
-		do_sensorTask();
+		drvTurnOn();
+		glbRtuPara.runningInfo.flag_taskStart=DONE;
+		glbRtuPara.runningInfo.flag_taskStart=glbRtuPara.runningInfo.flag_taskStart_backup;
+		glbRtuPara.flashConfig.value.runMode=AUTO_MODE;//进入传感器任务
+		apComm_doReport(accDoAll,1);
 	}
 	else
 	{
@@ -96,7 +107,12 @@ void odb_doTask(xt_u8* pData,xt_s32* pDataLen)
 			PrintfXTOS("car power off and do time sensor task\n");
 		}
 		flag0=0;
-		do_timeSensorTask();
+		drvTurnOff();
+		glbRtuPara.runningInfo.flag_fanOpened=NO;
+		glbRtuPara.runningInfo.flag_taskStart=NO;
+		glbRtuPara.runningInfo.flag_taskStart_backup=glbRtuPara.runningInfo.flag_taskStart;
+		glbRtuPara.flashConfig.value.runMode=HAND_MODE;//退出传感器任务，直到定时任务生效
+		glbRtuPara.runningInfo.flag_fanAdjLevel=0;
 	}
 	
 }

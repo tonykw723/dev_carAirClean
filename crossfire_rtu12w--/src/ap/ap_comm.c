@@ -316,6 +316,7 @@ static xt_void apCommTask(xt_void *pvParameters)
 		KEY_doAction();
 		odb_doTask(odbBuf,&odbLen);
 		do_timeSensorTask();
+		do_sensorTask();
 	}
 
 }
